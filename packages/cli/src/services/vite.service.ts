@@ -33,7 +33,7 @@ export class ViteService {
         host: '0.0.0.0',
       },
       optimizeDeps: {
-        include: ['date-fns', 'naive-ui'],
+        include: ['date-fns', 'naive-ui', 'vue', 'vue-router', 'pinia'],
       },
     }
   }
