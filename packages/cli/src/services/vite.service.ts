@@ -32,6 +32,9 @@ export class ViteService {
       server: {
         host: '0.0.0.0',
       },
+      optimizeDeps: {
+        include: ['date-fns', 'naive-ui'],
+      },
     }
   }
 
