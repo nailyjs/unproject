@@ -5,8 +5,10 @@
     "defu",
     "Naily",
     "nailyjs",
+    "sider",
     "tsup",
-    "uncli"
+    "uncli",
+    "vueuse"
   ],
 
   "files.associations": {

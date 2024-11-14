@@ -1,0 +1,6 @@
+plugins:
+  - specifier: cli-plugin
+
+uncli:
+  vite:
+    devtools: true

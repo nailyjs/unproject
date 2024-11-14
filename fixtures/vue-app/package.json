@@ -1,10 +1,13 @@
 {
   "name": "vue-app",
+  "type": "module",
   "private": true,
   "scripts": {
-    "configure": "uncli"
+    "configure": "uncli",
+    "dev": "vite"
   },
   "dependencies": {
-    "@nailyjs/uncli": "workspace:*"
+    "@nailyjs/uncli": "workspace:*",
+    "cli-plugin": "workspace:*"
   }
 }

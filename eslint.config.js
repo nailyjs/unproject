@@ -1,6 +1,7 @@
-import antfu from '@antfu/eslint-config'
+import naily from '@nailyjs/eslint'
 
-export default antfu({
-  type: 'lib',
-  rules: {},
+export default naily({
+  rules: {
+    'antfu/if-newline': 'off',
+  },
 })

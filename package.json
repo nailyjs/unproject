@@ -14,17 +14,20 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
     "@nailyjs/cli": "^2.0.26",
+    "@nailyjs/eslint": "^2.0.8",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.7.5",
     "bumpp": "^9.7.1",
     "eslint": "^9.12.0",
     "js-yaml": "^4.1.0",
     "lint-staged": "^15.2.10",
+    "postcss": "^8.4.49",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.3.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.2",
+    "vue-tsc": "^2.1.10"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

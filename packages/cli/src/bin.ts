@@ -1,4 +1,6 @@
-import { argv } from 'node:process'
-import { useProgram } from './index'
+import { ConfigPlugin } from '@nailyjs/config'
+import { UncliBootstrap } from './index'
 
-useProgram().program.parse(argv)
+new UncliBootstrap()
+  .use(ConfigPlugin())
+  .run()
