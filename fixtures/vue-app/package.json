@@ -1,0 +1,10 @@
+{
+  "name": "vue-app",
+  "private": true,
+  "scripts": {
+    "configure": "uncli"
+  },
+  "dependencies": {
+    "@nailyjs/uncli": "workspace:*"
+  }
+}
