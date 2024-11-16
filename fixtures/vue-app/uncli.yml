@@ -1,6 +1,5 @@
 plugins:
-  - specifier: cli-plugin
+  - specifier: unproject/plugin-home
 
-uncli:
-  vite:
-    devtools: true
+vite:
+  inspect: true

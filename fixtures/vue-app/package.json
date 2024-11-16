@@ -2,12 +2,15 @@
   "name": "vue-app",
   "type": "module",
   "private": true,
+  "keywords": [
+    "vue"
+  ],
   "scripts": {
-    "configure": "uncli",
+    "configure": "unproject",
     "dev": "vite"
   },
   "dependencies": {
-    "@nailyjs/uncli": "workspace:*",
-    "cli-plugin": "workspace:*"
+    "test-cli-plugin": "workspace:*",
+    "unproject": "workspace:*"
   }
 }

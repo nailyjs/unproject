@@ -8,7 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "ES2022",
-    "moduleResolution": "bundler"
+    "moduleResolution": "Bundler",
+    "outDir": "dist",
+    "skipLibCheck": true
   },
-  "include": ["src", "components", "pages", "src/common"]
+  "include": ["src", "frontend"]
 }

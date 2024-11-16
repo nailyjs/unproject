@@ -1,0 +1,9 @@
+import { useRequest } from '../utils/request'
+
+export const {{pascalCase name}}Controller = 'unproject:{{pascalCase name}}/{{pascalCase name}}Controller'
+export interface {{pascalCase name}}Controller {
+}
+
+export function use{{pascalCase name}}Controller() {
+  return useRequest().request<{{pascalCase name}}Controller>({{pascalCase name}}Controller)
+}

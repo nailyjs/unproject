@@ -3,12 +3,15 @@
     "antfu",
     "bumpp",
     "defu",
+    "iconify",
     "Naily",
     "nailyjs",
     "pinia",
+    "plopfile",
     "sider",
     "tsup",
     "uncli",
+    "unproject",
     "vueuse"
   ],
 

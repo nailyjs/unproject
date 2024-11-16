@@ -1,0 +1,42 @@
+{
+  "name": "unproject",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "A cli panel to configure project.",
+  "author": "Naily Zero <zero@naily.cc> (https://naily.cc)",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./plugin-home": {
+      "types": "./dist/plugin-home.d.ts",
+      "import": "./dist/plugin-home.js",
+      "require": "./dist/plugin-home.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "uncli": "./dist/bin.js",
+    "unproject": "./dist/bin.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup -w",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@nailyjs/config": "^2.0.7",
+    "@unproject/core": "workspace:*",
+    "@unproject/plugin-home": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0"
+  }
+}

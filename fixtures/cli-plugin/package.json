@@ -2,6 +2,7 @@
   "name": "test-cli-plugin",
   "type": "module",
   "version": "0.0.2",
+  "private": true,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,7 +16,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@nailyjs/uncli": "workspace:*",
+    "@nailyjs/rpc": "^2.0.9",
+    "@unproject/core": "workspace:*",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },

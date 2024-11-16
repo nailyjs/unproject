@@ -1,0 +1,30 @@
+import path from 'node:path'
+import { IBeforeStartContext, UnProjectPlugin } from '@unproject/core'
+import { {{pascalCase name}}ControllerImpl } from './controllers/{{dashCase name}}.controller'
+
+class {{pascalCase name}}PluginImpl implements UnProjectPlugin {
+  name: string = 'unproject:{{dashCase name}}'
+  private dirname: string = globalThis.__dirname || new URL('.', import.meta.url).pathname
+
+  async beforeStartServer(context: IBeforeStartContext): Promise<void> {
+    context
+      .addRoute({
+        path: '/dashboard/{{dashCase name}}',
+        name: 'unproject:{{dashCase name}}',
+        component: path.join(this.dirname, '../src/pages/{{pascalCase name}}.vue'),
+      })
+      .addMenu({
+        labelType: 'component',
+        label: path.join(this.dirname, '../src/components/{{pascalCase name}}Label.vue'),
+        iconType: 'component',
+        icon: path.join(this.dirname, '../src/components/{{pascalCase name}}Icon.vue'),
+        key: 'unproject:{{dashCase name}}',
+      })
+      .addRpcRoute({{pascalCase name}}ControllerImpl)
+  }
+}
+
+export function {{pascalCase name}}Plugin(): UnProjectPlugin {
+  return new {{pascalCase name}}PluginImpl()
+}
+export default {{pascalCase name}}Plugin
