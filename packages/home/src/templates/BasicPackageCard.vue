@@ -118,7 +118,7 @@ defineProps<{
               <NText type="error">未设置引擎</NText>
             </span>
             <span v-else>
-              <NTag v-for="(value, key) in packageJson.engines" :key="key" type="success">
+              <NTag v-for="(value, key) in packageJson.engines" :key="key" size="small" type="success">
                 {{ key }}: {{ value }}
               </NTag>
             </span>
