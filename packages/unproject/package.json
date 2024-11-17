@@ -34,7 +34,8 @@
   "dependencies": {
     "@nailyjs/config": "^2.0.7",
     "@unproject/core": "workspace:*",
-    "@unproject/plugin-home": "workspace:*"
+    "@unproject/plugin-home": "workspace:*",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
     "tsup": "^8.3.0"
