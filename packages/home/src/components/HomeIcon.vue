@@ -1,3 +1,3 @@
 <template>
-  <div class="i-carbon-home" />
+  <div class="i-ph-house-duotone" />
 </template>

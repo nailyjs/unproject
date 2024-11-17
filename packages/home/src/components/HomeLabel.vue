@@ -1,5 +1,3 @@
 <template>
-  <RouterLink to="/dashboard">
-    首页
-  </RouterLink>
+  首页
 </template>

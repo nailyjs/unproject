@@ -181,6 +181,9 @@ importers:
 
   packages/home:
     dependencies:
+      '@nailyjs/ioc':
+        specifier: ^2.0.6
+        version: 2.0.6
       '@nailyjs/rpc':
         specifier: ^2.0.9
         version: 2.0.9
@@ -190,6 +193,9 @@ importers:
       '@vueuse/core':
         specifier: ^11.2.0
         version: 11.2.0(vue@3.5.12(typescript@5.6.3))
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
       naive-ui:
         specifier: ^2.40.1
         version: 2.40.1(vue@3.5.12(typescript@5.6.3))

@@ -1,10 +1,7 @@
 <script setup lang="tsx">
 import { darkTheme, NConfigProvider, NDialogProvider, NLoadingBarProvider, NMessageProvider, zhCN } from 'naive-ui'
-import { RouterView, useRoute, useRouter } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { isDark } from './composables/dark'
-
-const route = useRoute()
-if (route.path === '/') useRouter().replace('/dashboard')
 </script>
 
 <template>

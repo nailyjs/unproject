@@ -27,6 +27,7 @@ const options = ref<MenuMixedOption[]>(await load())
         :position="windowWidth < cutPoint ? 'absolute' : 'static'"
         :collapsed-width="windowWidth < cutPoint ? 0 : undefined"
         :native-scrollbar="false"
+        z-2
       >
         <NMenu :options="options" />
       </NLayoutSider>
