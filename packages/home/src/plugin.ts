@@ -8,6 +8,7 @@ class HomePluginImpl implements UnProjectPlugin {
 
   async beforeStartServer(context: IBeforeStartContext): Promise<void> {
     context
+      .addRpcRoute(HomeControllerImpl)
       .addRoute({
         path: '/dashboard',
         name: 'unproject:home',
@@ -18,6 +19,11 @@ class HomePluginImpl implements UnProjectPlugin {
         name: 'unproject:home/market',
         component: path.join(this.dirname, '../src/pages/Market.vue'),
       })
+      .addUnoCSSSafeList([
+        'i-vscode-icons-folder-type-frontcommerce-opened',
+        'i-vscode-icons-folder-type-plugin-opened',
+        'i-vscode-icons-folder-type-light-node-opened',
+      ])
       .addMenu({
         labelType: 'component',
         label: path.join(this.dirname, '../src/components/HomeLabel.vue'),
@@ -41,7 +47,6 @@ class HomePluginImpl implements UnProjectPlugin {
           },
         ],
       })
-      .addRpcRoute(HomeControllerImpl)
   }
 }
 

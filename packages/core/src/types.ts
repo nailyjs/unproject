@@ -37,6 +37,8 @@ export interface IBeforeStartContext {
   getVueConfig(): VueOptions
   updateVueJsxConfig(config: VueJsxOptions): this
   getVueJsxConfig(): VueJsxOptions
+  addUnoCSSSafeList(safeList: string[]): this
+  getUnoCSSSafeList(): string[]
 }
 
 export interface UnProjectPlugin extends IocPlugin {

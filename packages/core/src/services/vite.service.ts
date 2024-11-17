@@ -28,7 +28,10 @@ export class ViteService {
         swc.vite(defaultSwcOptions),
         Vue(beforeStartContext.getVueConfig()),
         VueJsx(beforeStartContext.getVueJsxConfig()),
-        UnoCSS(beforeStartContext.getUnoCSSConfig()),
+        UnoCSS({
+          ...beforeStartContext.getUnoCSSConfig(),
+          safelist: beforeStartContext.getUnoCSSSafeList(),
+        }),
         VueRouterInjector(beforeStartContext),
         MenuInjector(beforeStartContext),
         NailyRpc(beforeStartContext),

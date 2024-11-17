@@ -78,6 +78,16 @@ export class BeforeStartContext implements IBeforeStartContext {
     return this
   }
 
+  unoCSSSafeList: string[] = []
+  addUnoCSSSafeList(safeList: string[]): this {
+    this.unoCSSSafeList.push(...safeList)
+    return this
+  }
+
+  getUnoCSSSafeList(): string[] {
+    return this.unoCSSSafeList
+  }
+
   static getInstance(container: UnProjectBootstrap): BeforeStartContext {
     const map = container.getContainer()
     if (map.has(BeforeStartContext) && map.get(BeforeStartContext).wrapperType === 'class')
