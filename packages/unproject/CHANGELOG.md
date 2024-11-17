@@ -1,5 +1,13 @@
 # unproject
 
+## 2.0.6
+
+### Patch Changes
+
+- Updated dependencies [7e4681f]
+  - @unproject/core@2.0.5
+  - @unproject/plugin-home@2.0.5
+
 ## 2.0.5
 
 ### Patch Changes

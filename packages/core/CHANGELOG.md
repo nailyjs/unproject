@@ -1,5 +1,11 @@
 # @unproject/core
 
+## 2.0.5
+
+### Patch Changes
+
+- 7e4681f: feat: switch to cdn
+
 ## 2.0.4
 
 ### Patch Changes
