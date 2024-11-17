@@ -33,7 +33,6 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.273",
     "@nailyjs/backend": "^2.0.9",
     "@nailyjs/config": "^2.0.7",
     "@nailyjs/ioc": "^2.0.6",

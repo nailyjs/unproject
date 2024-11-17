@@ -31,7 +31,9 @@ export class BeforeStartContext implements IBeforeStartContext {
     presets: [
       presetUno(),
       presetAttributify(),
-      presetIcons(),
+      presetIcons({
+        cdn: 'https://esm.sh/',
+      }),
       presetTypography(),
     ],
     configFile: false,
