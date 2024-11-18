@@ -11,7 +11,19 @@ export const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('./layouts/Default.vue'),
-      children: routes,
+      children: [
+        ...routes,
+        {
+          path: '/:pathMatch(.*)*',
+          name: '404',
+          component: () => import('./layouts/Default.vue'),
+        },
+      ],
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: '404',
+      component: () => import('./layouts/Default.vue'),
     },
   ],
 })

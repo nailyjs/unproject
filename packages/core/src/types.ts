@@ -1,4 +1,4 @@
-import type { Class, IocPlugin } from '@nailyjs/ioc'
+import type { Class, Container, IocPlugin } from '@nailyjs/ioc'
 import type { Key, MenuMixedOption } from 'naive-ui/es/menu/src/interface'
 import type { RouteRecordRaw } from 'vue-router'
 import { Options as VueOptions } from '@vitejs/plugin-vue'
@@ -39,6 +39,7 @@ export interface IBeforeStartContext {
   getVueJsxConfig(): VueJsxOptions
   addUnoCSSSafeList(safeList: string[]): this
   getUnoCSSSafeList(): string[]
+  getGlobalContainer(): Container
 }
 
 export interface UnProjectPlugin extends IocPlugin {

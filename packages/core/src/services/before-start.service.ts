@@ -1,6 +1,6 @@
 import type { Plugin, PluginOption } from 'vite'
 import type { MenuInfo, RpcController, UnProjectBootstrap } from '../index'
-import { ClassWrapper, Injectable } from '@nailyjs/ioc'
+import { ClassWrapper, Container, Injectable } from '@nailyjs/ioc'
 import { Options as VueOptions } from '@vitejs/plugin-vue'
 import { Options as VueJsxOptions } from '@vitejs/plugin-vue-jsx'
 import { presetAttributify, presetIcons, presetTypography, presetUno } from 'unocss'
@@ -9,6 +9,12 @@ import { IBeforeStartContext, RouteInfo } from '../types'
 
 @Injectable()
 export class BeforeStartContext implements IBeforeStartContext {
+  constructor(private readonly _container: Container) {}
+
+  getGlobalContainer(): Container {
+    return this._container
+  }
+
   vitePlugins: (PluginOption | Plugin)[] = []
   addVitePlugin(plugin: PluginOption | Plugin): this {
     this.vitePlugins.push(plugin)
