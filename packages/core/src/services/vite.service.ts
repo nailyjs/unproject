@@ -4,7 +4,6 @@ import { ClassWrapper, Container, Injectable } from '@nailyjs/ioc'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
-import Inspect from 'vite-plugin-inspect'
 import { MenuInjector } from '../plugins/menu'
 import { VueRouterInjector } from '../plugins/router'
 import { NailyRpc } from '../plugins/rpc'
@@ -45,7 +44,6 @@ export class ViteService {
         include: ['date-fns', 'naive-ui', 'vue', 'vue-router', 'pinia'],
       },
     }
-    if (this.uncliConfigService.isEnableInspect()) config.plugins.push(Inspect(this.uncliConfigService.getInspectOptions()))
     return config
   }
 

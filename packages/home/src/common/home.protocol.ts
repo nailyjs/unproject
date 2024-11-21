@@ -1,3 +1,4 @@
+import type { CompilerOptions } from 'typescript'
 import { PackageJson } from 'type-fest'
 import { useRequest } from '../utils/request'
 
@@ -18,6 +19,24 @@ export interface HomeController {
    * @returns {SearchValueItem[] | SearchError} search results
    */
   search(type: 'npm' | 'github' | 'taobao', keywords: string, options: Record<string, any>): Promise<SearchValue>
+  /**
+   * Get TypeScript configuration. It will resolve `tsconfig.json` file.
+   * @returns {TypeScriptConfiguration} TypeScript configuration.
+   */
+  getTypeScriptConfiguration(): Promise<TypeScriptConfiguration | 'not-found'>
+  /**
+   * Get TypeScript configuration layer. It will resolve all of `tsconfig.*.json` and `tsconfig.json` files.
+   * @returns {Record<string, TypeScriptConfiguration>} TypeScript configuration layer. `key` is the file name.
+   */
+  getTypeScriptConfigurationLayer(): Promise<Record<string, TypeScriptConfiguration>>
+}
+
+export interface TypeScriptConfiguration {
+  compilerOptions?: CompilerOptions
+  include?: string[]
+  exclude?: string[]
+  files?: string[]
+  references?: { path: string }[]
 }
 
 export interface NpmSearchValueItem {

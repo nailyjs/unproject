@@ -10,10 +10,20 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./components": {
+      "types": "./dist/components.d.ts",
+      "import": "./dist/components.js",
+      "require": "./dist/components.cjs"
+    },
     "./plugin-home": {
       "types": "./dist/plugin-home.d.ts",
       "import": "./dist/plugin-home.js",
       "require": "./dist/plugin-home.cjs"
+    },
+    "./plugin-debug": {
+      "types": "./dist/plugin-debug.d.ts",
+      "import": "./dist/plugin-debug.js",
+      "require": "./dist/plugin-debug.cjs"
     }
   },
   "main": "./dist/index.cjs",
@@ -33,7 +43,9 @@
   },
   "dependencies": {
     "@nailyjs/config": "^2.0.7",
+    "@unproject/components": "workspace:*",
     "@unproject/core": "workspace:*",
+    "@unproject/plugin-debug": "workspace:*",
     "@unproject/plugin-home": "workspace:*",
     "typescript": "^5.6.3"
   },

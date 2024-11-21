@@ -1,0 +1,16 @@
+{
+  "name": "schema",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@nailyjs/zod": "^2.0.8",
+    "@unproject/components": "workspace:*",
+    "@unproject/core": "workspace:*",
+    "vite": "^5.4.11",
+    "vite-plugin-vue-devtools": "^7.6.4",
+    "zod": "^3.23.8"
+  }
+}

@@ -19,16 +19,4 @@ export class ConfigService {
     const configuration: Configuration.Config = (this.loadConfig(cache) || {}) as Configuration.Config
     return configuration.plugins || []
   }
-
-  isEnableInspect(): boolean {
-    const configuration: Configuration.Config = (this.loadConfig() || {}) as Configuration.Config
-    return (configuration.vite || {}).inspect || false
-  }
-
-  getInspectOptions(): Record<string, any> {
-    const configuration: Configuration.Config = (this.loadConfig() || {}) as Configuration.Config
-    const opts = (configuration.vite || {}).inspect || {}
-    if (typeof opts === 'object') return opts
-    return {}
-  }
 }

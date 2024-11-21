@@ -4,15 +4,21 @@
   "private": true,
   "author": "Naily Zero <zero@naily.cc> (https://naily.cc)",
   "scripts": {
+    "build": "pnpm -r build",
     "build:core": "pnpm -F @unproject/core build && pnpm -F unproject build",
+    "build:components": "pnpm -F @unproject/components build",
+    "watch:components": "pnpm -F @unproject/components watch",
+    "build:schema": "pnpm -F @unproject/schema build",
     "build:home": "pnpm -F @unproject/plugin-home build",
+    "build:debug": "pnpm -F @unproject/plugin-debug build",
     "dev:vue": "pnpm -F vue-app configure",
     "new": "pnpm create es-project@latest",
     "lint": "eslint .",
     "postinstall": "npx simple-git-hooks",
     "test": "vitest",
     "changeset": "changeset",
-    "generate": "cross-env NODE_OPTIONS='--import tsx' plop --plopfile ./scripts/plop.ts"
+    "generate": "cross-env NODE_OPTIONS='--import tsx' plop --plopfile ./scripts/plop.ts",
+    "dev": "unproject"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",

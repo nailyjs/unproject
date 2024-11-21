@@ -1,8 +1,10 @@
 {
   "cSpell.words": [
     "antfu",
+    "browserify",
     "bumpp",
     "defu",
+    "extglob",
     "frontcommerce",
     "iconify",
     "libnpmsearch",
@@ -11,12 +13,15 @@
     "npmjs",
     "pinia",
     "plopfile",
+    "postcss",
     "sider",
     "tsup",
     "uncli",
     "unproject",
     "vueuse"
   ],
+
+  "css.validate": false,
 
   "files.associations": {
     "*.css": "postcss"

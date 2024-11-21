@@ -14,7 +14,7 @@ defineProps<{
       <IconTitle title="依赖" icon="i-vscode-icons-file-type-node" />
     </template>
     <template #header-extra>
-      <NButton size="tiny" round type="info" @click="$router.push('/dashboard/dependencies')">
+      <NButton size="tiny" round type="info" @click="$router.push('/dashboard/market')">
         查看详情
       </NButton>
     </template>
