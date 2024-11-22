@@ -1,5 +1,17 @@
 # unproject
 
+## 2.0.7
+
+### Patch Changes
+
+- 6c32a2e: feat: add typescript & schemas
+- Updated dependencies [dedc3a7]
+- Updated dependencies [6c32a2e]
+  - @unproject/core@2.0.6
+  - @unproject/components@2.0.6
+  - @unproject/plugin-home@2.0.6
+  - @unproject/plugin-debug@2.0.1
+
 ## 2.0.6
 
 ### Patch Changes

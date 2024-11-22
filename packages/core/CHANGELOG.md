@@ -1,5 +1,14 @@
 # @unproject/core
 
+## 2.0.6
+
+### Patch Changes
+
+- dedc3a7: feat: add getGlobalContainer in before start server
+- 6c32a2e: feat: add typescript & schemas
+- Updated dependencies [6c32a2e]
+  - @unproject/components@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes
