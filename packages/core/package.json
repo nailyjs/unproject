@@ -1,7 +1,7 @@
 {
   "name": "@unproject/core",
   "type": "module",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Core package for unproject.",
   "author": "Naily Zero <zero@naily.cc> (https://naily.cc)",
   "exports": {

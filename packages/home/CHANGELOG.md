@@ -1,5 +1,13 @@
 # @unproject/plugin-home
 
+## 2.0.8
+
+### Patch Changes
+
+- Updated dependencies [1623d2f]
+  - @unproject/core@2.0.8
+  - @unproject/components@2.0.8
+
 ## 2.0.7
 
 ### Patch Changes

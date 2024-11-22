@@ -1,5 +1,12 @@
 # test-cli-plugin
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [1623d2f]
+  - @unproject/core@2.0.8
+
 ## 0.0.9
 
 ### Patch Changes
