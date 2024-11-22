@@ -1,5 +1,12 @@
 # @unproject/core
 
+## 2.0.7
+
+### Patch Changes
+
+- 85af8a6: fix(core): highlight.js
+  - @unproject/components@2.0.7
+
 ## 2.0.6
 
 ### Patch Changes
