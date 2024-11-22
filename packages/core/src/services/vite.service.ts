@@ -45,8 +45,21 @@ export class ViteService {
         host: '0.0.0.0',
       },
       optimizeDeps: {
-        include: ['date-fns', 'naive-ui', 'vue', 'vue-router', 'pinia', 'highlight.js'],
-        needsInterop: ['highlight.js'],
+        include: [
+          'date-fns',
+          'naive-ui',
+          'vue',
+          'vue-router',
+          'pinia',
+          'highlight.js',
+          'highlight.js/lib/core',
+          'typescript',
+          'path-browserify',
+        ],
+        needsInterop: [
+          'highlight.js',
+          'highlight.js/lib/core',
+        ],
       },
     }
     return config
