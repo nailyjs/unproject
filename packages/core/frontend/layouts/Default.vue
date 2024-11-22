@@ -3,7 +3,7 @@ import type { MenuMixedOption } from 'naive-ui/es/menu/src/interface'
 import { UFallback } from '@unproject/components'
 import { useElementSize, useWindowSize } from '@vueuse/core'
 import { NLayout, NLayoutContent, NLayoutFooter, NLayoutSider, NMenu } from 'naive-ui'
-import { provide, ref, watch } from 'vue'
+import { provide, ref } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import { version } from '../../package.json'
 import { isDark, toggleDark } from '../composables/dark'
@@ -18,18 +18,6 @@ provide('unproject:layout-cut-point', cutPoint)
 const { width: windowWidth } = useWindowSize()
 const load = useMenuOptions()
 const options = ref<MenuMixedOption[]>(await load())
-
-const isDisabledPointerEvents = ref(true)
-provide('unproject:layout-disabled-pointer-events', isDisabledPointerEvents)
-const disabledPointerEvents = () => isDisabledPointerEvents.value = false
-watch(isDisabledPointerEvents, (val) => {
-  if (val === true) document.body.style.cursor = 'not-allowed'
-  else document.body.style.cursor = ''
-  if (val === true) document.body.style.pointerEvents = 'none'
-  else document.body.style.pointerEvents = ''
-  if (val === true) document.body.style.userSelect = 'none'
-  else document.body.style.userSelect = ''
-}, { immediate: true })
 </script>
 
 <template>
@@ -44,7 +32,6 @@ watch(isDisabledPointerEvents, (val) => {
         :position="windowWidth < cutPoint ? 'absolute' : 'static'"
         :collapsed-width="windowWidth < cutPoint ? 0 : undefined"
         :native-scrollbar="false"
-        :class="isDisabledPointerEvents ? 'op-30 transition-all' : ''"
         z-2
       >
         <NMenu :options="options" />
@@ -53,7 +40,7 @@ watch(isDisabledPointerEvents, (val) => {
         <RouterView v-slot="{ Component }">
           <template v-if="Component">
             <KeepAlive>
-              <Suspense @resolve="disabledPointerEvents">
+              <Suspense>
                 <!-- 主要内容 -->
                 <component :is="Component" />
                 <!-- 加载中状态 -->
