@@ -32,6 +32,7 @@
     "@nailyjs/ioc": "^2.0.6",
     "@nailyjs/zod": "^2.0.8",
     "@unproject/core": "workspace:*",
+    "@vueuse/core": "^11.3.0",
     "naive-ui": "^2.40.1",
     "reflect-metadata": "^0.2.2",
     "unocss": "^0.64.1",

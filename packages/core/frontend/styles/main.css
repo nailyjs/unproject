@@ -1,4 +1,9 @@
+html {
+  --unproject-bg: #fff;
+}
+
 html.dark {
-  background: #101014;
+  --unproject-bg: #101014;
+  background: var(--unproject-bg);
   color-scheme: dark;
 }

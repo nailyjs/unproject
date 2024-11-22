@@ -15,6 +15,7 @@
     "plopfile",
     "postcss",
     "sider",
+    "suspensible",
     "tsup",
     "uncli",
     "unproject",

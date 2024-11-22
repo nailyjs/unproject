@@ -3,7 +3,7 @@ import path from 'node:path'
 import { RpcController } from '@nailyjs/rpc'
 import glob from 'fast-glob'
 import { PackageJson } from 'type-fest'
-import { HomeController, SearchValue, TypeScriptConfiguration } from '../common/home.protocol'
+import { DeepPartial, HomeController, SearchValue, TypeScriptConfiguration } from '../common/home.protocol'
 import { SearchService } from '../services/search.service'
 
 @RpcController(HomeController)
@@ -40,5 +40,12 @@ export class HomeControllerImpl implements HomeController {
       result[tsconfigPath] = JSON.parse(tsconfig)
     }
     return result
+  }
+
+  async updateTypeScriptConfiguration(path: string, configuration: DeepPartial<TypeScriptConfiguration>): Promise<'not-found' | TypeScriptConfiguration> {
+    const layer = await this.getTypeScriptConfigurationLayer()
+    if (!layer[path]) return 'not-found'
+    fs.writeFileSync(path, JSON.stringify(configuration, null, 2))
+    return configuration as TypeScriptConfiguration
   }
 }

@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler"
+    "module": "None",
+    "moduleResolution": "Bundler",
+    "strictPropertyInitialization": false
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

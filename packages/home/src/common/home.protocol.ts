@@ -29,6 +29,17 @@ export interface HomeController {
    * @returns {Record<string, TypeScriptConfiguration>} TypeScript configuration layer. `key` is the file name.
    */
   getTypeScriptConfigurationLayer(): Promise<Record<string, TypeScriptConfiguration>>
+  /**
+   * Update TypeScript configuration.
+   * @param path TypeScript configuration file path.
+   * @param configuration TypeScript configuration. It will overwrite the original configuration.
+   * @returns {TypeScriptConfiguration | 'not-found'} Updated TypeScript configuration. `not-found` if the file does not exist.
+   */
+  updateTypeScriptConfiguration(path: string, configuration: DeepPartial<TypeScriptConfiguration>): Promise<'not-found' | TypeScriptConfiguration>
+}
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: DeepPartial<T[P]>
 }
 
 export interface TypeScriptConfiguration {

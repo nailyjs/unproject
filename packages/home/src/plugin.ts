@@ -9,6 +9,12 @@ class HomePluginImpl implements UnProjectPlugin {
   async beforeStartServer(context: IBeforeStartContext): Promise<void> {
     context
       .addRpcRoute(HomeControllerImpl)
+      .registerHljsLanguage('json')
+      .mergeI18nMessage('zh-CN', {
+        'unproject:home': {
+          title: '首页',
+        },
+      })
       .addRoute({
         path: '/dashboard',
         name: 'unproject:home',

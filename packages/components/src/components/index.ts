@@ -1,3 +1,6 @@
+export { default as UCustomInputCard } from './UCustomInputCard.vue'
+export { default as UCustomSwitchCard } from './UCustomSwitchCard.vue'
+export { default as UFallback } from './UFallback.vue'
 export { default as UHeader } from './UHeader.vue'
 export { default as UIconTab } from './UIconTab.vue'
 export { default as UNumber } from './UNumberCard.vue'

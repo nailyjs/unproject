@@ -1,23 +1,21 @@
 <script setup lang="tsx">
+import hljs from 'highlight.js/lib/core'
 import { darkTheme, NConfigProvider, NDialogProvider, NLoadingBarProvider, NMessageProvider, zhCN } from 'naive-ui'
+import { register } from 'virtual:uncli:hljs'
 import { RouterView } from 'vue-router'
 import { isDark } from './composables/dark'
+
+await register(hljs)
 </script>
 
 <template>
-  <Suspense>
+  <NConfigProvider :hljs="hljs" :theme="isDark ? darkTheme : null" :locale="zhCN">
     <NLoadingBarProvider>
-      <NConfigProvider :theme="isDark ? darkTheme : null" :locale="zhCN">
-        <NMessageProvider>
-          <NDialogProvider>
-            <RouterView />
-          </NDialogProvider>
-        </NMessageProvider>
-      </NConfigProvider>
+      <NMessageProvider>
+        <NDialogProvider>
+          <RouterView />
+        </NDialogProvider>
+      </NMessageProvider>
     </NLoadingBarProvider>
-
-    <template #fallback>
-      <div>Loading unproject...</div>
-    </template>
-  </Suspense>
+  </NConfigProvider>
 </template>
