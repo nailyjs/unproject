@@ -1,5 +1,12 @@
 # @unproject/core
 
+## 2.0.9
+
+### Patch Changes
+
+- cab6a05: fix(core): optimizeDeps
+  - @unproject/components@2.0.9
+
 ## 2.0.8
 
 ### Patch Changes

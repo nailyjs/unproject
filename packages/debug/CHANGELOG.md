@@ -1,5 +1,12 @@
 # @unproject/plugin-debug
 
+## 2.0.4
+
+### Patch Changes
+
+- Updated dependencies [cab6a05]
+  - @unproject/core@2.0.9
+
 ## 2.0.3
 
 ### Patch Changes

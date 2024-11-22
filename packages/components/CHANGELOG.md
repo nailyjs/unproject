@@ -1,5 +1,12 @@
 # @unproject/components
 
+## 2.0.9
+
+### Patch Changes
+
+- Updated dependencies [cab6a05]
+  - @unproject/core@2.0.9
+
 ## 2.0.8
 
 ### Patch Changes

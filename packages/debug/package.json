@@ -1,7 +1,7 @@
 {
   "name": "@unproject/plugin-debug",
   "type": "module",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "debug plugin for unproject",
   "author": "Naily Zero <zero@naily.cc> (https://naily.cc)",
   "exports": {
