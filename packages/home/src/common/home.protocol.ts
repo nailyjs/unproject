@@ -36,6 +36,27 @@ export interface HomeController {
    * @returns {TypeScriptConfiguration | 'not-found'} Updated TypeScript configuration. `not-found` if the file does not exist.
    */
   updateTypeScriptConfiguration(path: string, configuration: DeepPartial<TypeScriptConfiguration>): Promise<'not-found' | TypeScriptConfiguration>
+  /**
+   * Install package.
+   *
+   * @param {string} name package name
+   * @return {Promise<void>}
+   * @memberof HomeController
+   */
+  installPackage(name: string): Promise<{ code: number }>
+  /**
+   * Get internal logs from `.unproject/unproject.log`.
+   *
+   * @return {Promise<InternalLogReturn>}
+   * @memberof HomeController
+   */
+  getInternalLogs(): Promise<InternalLogReturn>
+}
+
+export interface InternalLogReturn {
+  logs: (Record<string, string> | 'parse-error')[]
+  raw: string
+  rawLines: string[]
 }
 
 export type DeepPartial<T> = {

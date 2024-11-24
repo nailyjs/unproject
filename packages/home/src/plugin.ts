@@ -30,6 +30,11 @@ class HomePluginImpl implements UnProjectPlugin {
         name: 'unproject:home/typescript',
         component: path.join(this.dirname, '../src/pages/Typescript.vue'),
       })
+      .addRoute({
+        path: '/dashboard/logs',
+        name: 'unproject:home/logs',
+        component: path.join(this.dirname, '../src/pages/Logs.vue'),
+      })
       .addUnoCSSSafeList([
         'i-vscode-icons-folder-type-frontcommerce-opened',
         'i-vscode-icons-folder-type-plugin-opened',
@@ -62,6 +67,13 @@ class HomePluginImpl implements UnProjectPlugin {
             key: 'unproject:home/typescript',
             iconType: 'component',
             icon: path.join(this.dirname, '../src/components/TypescriptIcon.vue'),
+          },
+          {
+            labelType: 'component',
+            label: path.join(this.dirname, '../src/components/LogsLabel.vue'),
+            key: 'unproject:home/logs',
+            iconType: 'component',
+            icon: path.join(this.dirname, '../src/components/LogsIcon.vue'),
           },
         ],
       })

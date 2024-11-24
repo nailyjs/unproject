@@ -3,6 +3,9 @@ import { NButton, NCard, NTag, NText } from 'naive-ui'
 import { NpmSearchValueItem } from '../common'
 
 defineProps<Partial<NpmSearchValueItem>>()
+defineEmits<{
+  install: [Partial<NpmSearchValueItem>]
+}>()
 </script>
 
 <template>
@@ -16,11 +19,16 @@ defineProps<Partial<NpmSearchValueItem>>()
       {{ description }}
     </NText>
     <template #header-extra>
-      <NButton tag="a" text type="primary" size="small" :href="href" target="_blank">
-        打开 <template #icon>
-          <div class="i-ph-arrow-square-out-duotone" />
-        </template>
-      </NButton>
+      <div flex items-center gap-3>
+        <NButton type="primary" size="small" @click="$emit('install', $props)">
+          安装
+        </NButton>
+        <NButton tag="a" text type="primary" size="small" :href="href" target="_blank">
+          打开 <template #icon>
+            <div class="i-ph-arrow-square-out-duotone" />
+          </template>
+        </NButton>
+      </div>
     </template>
   </NCard>
 </template>

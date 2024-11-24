@@ -9,6 +9,7 @@ const tabType = ref<'market' | 'plugin' | '本地'>('market')
 const searchSelectValue = ref<'npm' | 'taobao' | 'github'>('npm')
 const searchValue = ref<string>('')
 const searching = ref(false)
+const installing = ref(false)
 const searchSignal = ref(0)
 
 function handleSearch() {
@@ -27,11 +28,12 @@ function handleSearch() {
       v-model="tabType"
       @search="handleSearch"
     />
-    <NSpin v-show="tabType === 'market'" :show="searching" description="正在搜索中...">
+    <NSpin v-show="tabType === 'market'" :show="searching || installing" :description="searching ? `正在搜索中...` : `正在安装中...`">
       <NpmSearchResult
         v-if="searchSelectValue !== 'github'"
         v-model:search-value="searchValue"
         v-model:searching="searching"
+        v-model:installing="installing"
         v-model:search-select-value="searchSelectValue"
         :search-signal="searchSignal"
       />

@@ -55,6 +55,19 @@ function handleSearch() {
     searching.value = false
   })
 }
+
+const installing = defineModel('installing', {
+  default: false,
+  type: Boolean,
+})
+function handleInstall(name: Partial<NpmSearchValueItem>): void {
+  installing.value = true
+  homeController.installPackage(name.name)
+    .finally(() => {
+      message.success(`安装 ${name.name} 成功`)
+      installing.value = false
+    })
+}
 </script>
 
 <template>
@@ -68,7 +81,7 @@ function handleSearch() {
         show-size-picker
       />
       <div v-for="(item, index) in searchResult" :key="index">
-        <NpmSearchValueCard v-if="item.type === 'npm'" v-bind="item" :search-select-value="searchSelectValue" />
+        <NpmSearchValueCard v-if="item.type === 'npm'" v-bind="item" :search-select-value="searchSelectValue" @install="handleInstall" />
       </div>
       <NPagination
         v-if="searchResult.length > 0 && searchResult[0].type === 'npm'"

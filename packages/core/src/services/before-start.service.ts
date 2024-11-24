@@ -8,6 +8,7 @@ import { get, set } from 'lodash-es'
 import { Key } from 'naive-ui/es/menu/src/interface'
 import { presetAttributify, presetIcons, presetTypography, presetUno } from 'unocss'
 import { VitePluginConfig } from 'unocss/vite'
+import winston from 'winston'
 import { ConfigService } from '../services/config.service'
 import { IBeforeStartContext, RouteInfo } from '../types'
 
@@ -21,6 +22,7 @@ export class BeforeStartContext implements IBeforeStartContext {
   constructor(
     private readonly _container: Container,
     private readonly configService: ConfigService,
+    public readonly logger: winston.Logger,
   ) {}
 
   getConfiguration(cache: boolean = true): DeepPartial<Configuration.Config> {
@@ -113,6 +115,7 @@ export class BeforeStartContext implements IBeforeStartContext {
   }
 
   hljsLanguages: HljsLanguage[] = [{ name: 'json' }]
+
   registerHljsLanguage(language: HljsLanguages | (string & {}), importSpecifier?: string): this {
     const registeredLang = this.hljsLanguages.find(lang => lang.name === language && lang.importSpecifier === importSpecifier)
     if (!registeredLang) {

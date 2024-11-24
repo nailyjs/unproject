@@ -1,14 +1,17 @@
 import type { UnProjectPlugin } from './types'
 import path from 'node:path'
 import { argv } from 'node:process'
-import { AbstractBootstrap } from '@nailyjs/ioc'
+import { AbstractBootstrap, ConstantWrapper } from '@nailyjs/ioc'
 import { Command } from 'commander'
 import k from 'kleur'
 import { createServer } from 'vite'
+import winston from 'winston'
 import { description, version } from '../package.json'
+import { WebsocketServer } from './services'
 import { BeforeStartContext } from './services/before-start.service'
 import { PluginDiscoveryService } from './services/plugin-discovery.service'
 import { ViteService } from './services/vite.service'
+import './winston'
 
 export class UnProjectBootstrap extends AbstractBootstrap {
   private setupCommands(beforeStartContext: BeforeStartContext, restart: boolean): Command {
@@ -32,6 +35,8 @@ export class UnProjectBootstrap extends AbstractBootstrap {
             await viteServer.restart()
           }
         })
+        const winstonLogger = this.getContainer().get(winston.Logger) as ConstantWrapper<winston.Logger>
+        WebsocketServer.getInstance(this, viteServer, winstonLogger.getValue())
       })
   }
 
