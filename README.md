@@ -4,9 +4,9 @@
 
 # unproject
 
-</div>
-
 Understand and manage all JavaScript/TypeScript projects with one panel.
+
+</div>
 
 ## How to start
 
