@@ -1,5 +1,12 @@
 # @unproject/core
 
+## 2.0.10
+
+### Patch Changes
+
+- d550d1b: feat: 添加 Websocket Server 依赖，添加 winston logger 到核心
+  - @unproject/components@2.0.10
+
 ## 2.0.9
 
 ### Patch Changes

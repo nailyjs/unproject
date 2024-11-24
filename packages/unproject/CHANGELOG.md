@@ -1,5 +1,16 @@
 # unproject
 
+## 2.0.11
+
+### Patch Changes
+
+- d550d1b: feat: 添加 Websocket Server 依赖，添加 winston logger 到核心
+- Updated dependencies [d550d1b]
+  - @unproject/core@2.0.10
+  - @unproject/plugin-home@2.0.10
+  - @unproject/components@2.0.10
+  - @unproject/plugin-debug@2.0.5
+
 ## 2.0.10
 
 ### Patch Changes

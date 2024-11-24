@@ -1,5 +1,12 @@
 # @unproject/plugin-debug
 
+## 2.0.5
+
+### Patch Changes
+
+- Updated dependencies [d550d1b]
+  - @unproject/core@2.0.10
+
 ## 2.0.4
 
 ### Patch Changes
